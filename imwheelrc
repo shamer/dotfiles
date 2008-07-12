@@ -1,0 +1,16 @@
+"Mozilla.*"
+ None, Up,   Alt_L|Left
+ None, Down, Alt_L|Right
+
+"gnome-terminal"
+ None, Up,   Control_L|Page_Up
+ None, Down, Control_L|Page_Down
+
+".*pdf"
+ None, Up,   Control_L|Page_Up
+ None, Down, Control_L|Page_Down
+
+# this should be last
+".*"
+ None, Up,   Alt_L|Left
+ None, Down, Alt_L|Right
