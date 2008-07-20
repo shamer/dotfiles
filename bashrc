@@ -6,5 +6,6 @@ alias ll='ls -la'
 alias h='history'
 alias gvi='gvim'
 
+shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
