@@ -4,7 +4,7 @@
 import os
 home = os.path.abspath(os.environ['HOME'])
 path = os.path.join(home, '.dotfiles') 
-excludes = ['gtk-2.0', 'create_symlinks.py']
+excludes = ['gtk-2.0', 'create_symlink.py']
 for f in os.listdir(path):
     if f.startswith('.'):
         continue
