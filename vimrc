@@ -56,7 +56,7 @@ set nobackup          " don't make backup file
 " remember info for 10 files, but never any on removable disks, don't remember
 " marks in files, don't rehighlight old search patterns, and only save up to
 " 100 lines of registers;
-set viminfo=/10,'10,r/mnt/zip,r/mnt/floppy,f0,h,\"100
+set viminfo=/10,'10,r.git/COMMIT_EDITMSG,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Formatting/Layout
