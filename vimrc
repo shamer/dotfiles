@@ -90,6 +90,9 @@ syntax on           " Turn syntax hilighting on
 " File specific options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Git commit messages
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
+
 " for both CSS and HTML, use genuine tab characters for indentation, to make
 " files a few bytes smaller
 autocmd FileType html,css set noexpandtab tabstop=8
