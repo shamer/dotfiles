@@ -1,0 +1,21 @@
+startup_message		off
+crlf			off
+vbell			off
+vbell_msg		"  -- Bing! --  "
+defscrollback		1000
+autodetach 		on
+shell			-$SHELL
+
+# Time a message is displayed if screen is not disturbed by
+# other activity. The dafault is 5 seconds:
+msgwait 15
+
+# Enable shifr-pgup / shift-pgdown scrolling
+termcapinfo xterm|xterms|xs|rxvt ti@:te@	# Use xterm's normal screen buffer
+
+# Change widow with alt-q and alt-w
+bindkey 'q' prev
+bindkey 'w' next
+
+# status 
+hardstatus alwayslastline '%{= M}%H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c'
