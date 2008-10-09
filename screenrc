@@ -11,7 +11,7 @@ shell			-$SHELL
 msgwait 15
 
 # Enable shifr-pgup / shift-pgdown scrolling
-termcapinfo xterm|xterms|xs|rxvt ti@:te@	# Use xterm's normal screen buffer
+termcapinfo xterm*|xterms|xs|rxvt ti@:te@	# Use xterm's normal screen buffer
 
 # Change widow with alt-q and alt-w
 bindkey 'q' prev
