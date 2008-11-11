@@ -11,11 +11,17 @@ shell			-$SHELL
 msgwait 15
 
 # Enable shifr-pgup / shift-pgdown scrolling
-termcapinfo xterm*|xterms|xs|rxvt ti@:te@	# Use xterm's normal screen buffer
+termcapinfo xterm|xterm*|xterms|xs|rxvt ti@:te@	# Use xterm's normal screen buffer
 
-# Change widow with alt-q and alt-w
+# Change window with alt-q and alt-w
 bindkey 'q' prev
 bindkey 'w' next
+
+# Use alt-pgup/pgdn to scroll in screen's buffer
+bindkey ^[[5;3~ eval "copy" "stuff \"^u\"" # alt-page-up goes to copy mode 
+bindkey ^[[6;3~ eval "copy"                # alt-page-down goes to copy mode 
+bindkey -m ^[[5;3~ stuff "^u"              # alt-page-up sends page-up in copy mode 
+bindkey -m ^[[6;3~ stuff "^d"              # alt-page-down sends page-down in copy mode 
 
 # status 
 hardstatus alwayslastline '%{= M}%H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c'
