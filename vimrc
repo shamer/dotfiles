@@ -179,5 +179,4 @@ nnoremap <C-y> <C-y><C-y><C-y>
 runtime plugins/matchit.vim
 
 " Easier comment handling (block commenting, toggling)
-runtime plugins/matchit.vim
-
+runtime plugins/feraltogglecommentify.vim
