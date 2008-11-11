@@ -18,6 +18,7 @@ set hidden          " Can hide buffers without closing them
 set printoptions=left:8pc,right:3pc  " printing options (pc = percent of page)
 "set nomodeline      " Don't let mode lines in files over ride this .vimrc
 set tagrelative     " Make paths in tag files relative to location of the tag file
+set title           " Set term titles
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Searching
@@ -85,6 +86,7 @@ set nonu            " Don't show line numbers
 set nolist          " Don't show end of line and tab characters
 "set showbreak=$     " Use '$' for long line wrapping character
 syntax on           " Turn syntax hilighting on
+set listchars=tab:>-,trail:.,eol:$ " Show trailing spaces when listing
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific options
@@ -157,6 +159,10 @@ map <C-Right> :bnext<Return>
 " Switch to previous buffer (ctrl + left arrow)
 map <C-Left> :bpre<Return>
 
+" Faster scrolling
+nnoremap <C-e> <C-e><C-e><C-e>
+nnoremap <C-y> <C-y><C-y><C-y>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin/script list 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,3 +174,10 @@ map <C-Left> :bpre<Return>
 "
 " pydiction:
 " http://www.vim.org/scripts/script.php?script_id=850
+
+" Smarter matching for %
+runtime plugins/matchit.vim
+
+" Easier comment handling (block commenting, toggling)
+runtime plugins/matchit.vim
+
