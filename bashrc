@@ -8,3 +8,12 @@ alias gvi='gvim'
 shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
+
+case $TERM in
+	xterm*|rxvt*|Eterm)
+		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+		;;
+	screen)
+		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+		;;
+esac
