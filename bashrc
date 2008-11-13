@@ -9,3 +9,12 @@ shopt -s cmdhist
 shopt -s histappend
 shopt -s checkwinsize
 
+# Set the window title
+case $TERM in
+	xterm*|rxvt*|Eterm)
+		export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+		;;
+	screen)
+		export PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+		;;
+esac
