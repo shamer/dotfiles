@@ -194,7 +194,7 @@ color_info 1
 # the magic functions %Exit or %Quit you can force a direct exit, bypassing
 # any confirmation.
 
-confirm_exit 1
+confirm_exit 0
 
 # Use deep_reload() as a substitute for reload() by default. deep_reload() is
 # still available as dreload() and appears as a builtin.
