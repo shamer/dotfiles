@@ -4,6 +4,7 @@ alias ls='ls --color=always'
 alias ll='ls -la'
 alias h='history'
 alias gvi='gvim'
+alias tc='truecrypt'
 
 shopt -s cmdhist
 shopt -s histappend
