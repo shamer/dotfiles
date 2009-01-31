@@ -5,7 +5,13 @@
 	st = status
 	co = checkout
 	ci = commit
-
+[core]
+	excludesfile = /home/shamer/.gitignore
+	# search for core.pager in
+	# <http://www.kernel.org/pub/software/scm/git/docs/git-config.html>
+	# to see why we use this convoluted syntax
+	pager = less -$LESS -SFRX -SR 
+	#+'/^---'
 [color]
 	branch = auto
 	diff = auto
@@ -15,10 +21,11 @@
 	local = yellow 
 	remote = green
 [color "diff"]
-	meta = yellow bold
+	meta = yellow reverse
 	frag = magenta bold
 	old = red bold
 	new = green bold
+	whitespace = blue reverse
 [color "status"]
 	added = yellow
 	changed = green
