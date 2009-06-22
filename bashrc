@@ -5,6 +5,14 @@ alias ll='ls -la'
 alias h='history'
 alias gvi='gvim'
 alias tc='truecrypt'
+alias go='gnome-open'
+alias xv='xview'
+
+alias l='ls'
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../../'
+alias uuuu='cd ../../../..'
 
 shopt -s cmdhist
 shopt -s histappend
