@@ -9,7 +9,7 @@
 set nocompatible    " Use vim defaults
 filetype on         " Enable file type detection
 filetype plugin on  " Load filetype plugin
-set history=50      " Have fifty linds of command-line history
+set history=50      " Have fifty lines of command-line history
 set mouse=a         " Have the mouse enabled all the time
 set fileformats="unix,dos,mac"
 set backspace=2     " Backspace over insert start
@@ -109,6 +109,7 @@ autocmd FileType make set noexpandtab shiftwidth=8
 " use indentation of 4 spaces, expand tabs
 autocmd FileType c,cpp,slang set cindent shiftwidth=4 softtabstop=4 tabstop=8 expandtab
 autocmd FileType java set cindent shiftwidth=4 softtabstop=4 tabstop=8 expandtab
+autocmd FileType php set cindent shiftwidth=2 softtabstop=2 tabstop=8 expandtab
 
 " for perl have things in braces indent themselves
 autocmd FileType perl set smartindent
@@ -151,6 +152,9 @@ map <F7> :set list!<Return>
 
 " Display buffer list and switch to another buffer
 map <F5> :ls<Return>:b 
+
+" Turn spell checking on
+map <F9> :setlocal spell spelllang=en_us<Return>
 
 " Switch to next buffer (ctrl + right arrow)
 map <C-Right> :bnext<Return>
