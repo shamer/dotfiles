@@ -154,7 +154,7 @@ map <F7> :set list!<Return>
 map <F5> :ls<Return>:b 
 
 " Turn spell checking on
-map <F9> :setlocal spell spelllang=en_us<Return>
+map <F9> :setlocal spell! spelllang=en_us<Return>
 
 " Switch to next buffer (ctrl + right arrow)
 map <C-Right> :bnext<Return>
