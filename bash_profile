@@ -1,4 +1,4 @@
-PATH=/opt/mplayer-bin/bin:~/bin:$PATH 
+PATH=/sbin:/usr/sbin:~/bin:$PATH
 export PATH
 
 HISTFILESIZE=2000
