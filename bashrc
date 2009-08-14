@@ -7,6 +7,7 @@ alias gvi='gvim'
 alias tc='truecrypt'
 alias go='gnome-open'
 alias xv='xview'
+alias grepsrc='grep --exclude-dir=.svn --exclude-dir=.git'
 
 alias l='ls'
 alias u='cd ..'
