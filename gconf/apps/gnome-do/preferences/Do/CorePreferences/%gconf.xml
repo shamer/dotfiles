@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="QuietStart" mtime="1248326303" type="bool" value="true"/>
+	<entry name="AlwaysShowResults" mtime="1248326304" type="bool" value="true"/>
+	<entry name="Theme" mtime="1248326304" type="string">
+		<stringvalue>Classic</stringvalue>
+	</entry>
+	<entry name="TextModeKeybinding" mtime="1240717281" type="string">
+		<stringvalue>period</stringvalue>
+	</entry>
+	<entry name="SummonKeybinding" mtime="1240717281" type="string">
+		<stringvalue>&lt;Super&gt;BackSpace</stringvalue>
+	</entry>
+</gconf>
