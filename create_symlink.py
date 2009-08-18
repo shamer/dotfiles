@@ -26,7 +26,7 @@ if len(sys.argv) > 1:
 else:
     # Process all of the files 
     files = filter(lambda x: x not in deep_dir_heads, os.listdir(path))
-    files.extend('deep_dir_bases')
+    files.extend(deep_dir_bases)
 
 
 for f in files:
@@ -34,18 +34,18 @@ for f in files:
         continue
 
     if f not in excludes and f not in deep_dir_heads:
-        dst = os.path.join(home, '.' + f)
         src = os.path.abspath(f)
+        dst = os.path.join(home, '.' + f)
         symlink(src, dst)
 
     elif f in deep_dir_bases:
         for dir in os.listdir(os.path.join(path, f)):
-            src = os.join(path, f, dir)
+            src = os.path.abspath(os.join(f, dir))
             dst = os.join(home, '.' + f, dir)
             symlink(src, dst)
 
     elif os.path.join(os.path.split(f)[:-1]) in deep_dir_bases:
-        src = os.join(path, f)
+        src = os.path.abspath(f)
         dst = os.join(home, '.' + f)
         symlink(src, dst)
 
