@@ -19,6 +19,8 @@ set printoptions=left:8pc,right:3pc  " printing options (pc = percent of page)
 set tagrelative     " Make paths in tag files relative to location of the tag file
 set title           " Set term titles
 
+command W w !sudo tee % > /dev/null
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Searching
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
