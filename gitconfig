@@ -5,6 +5,7 @@
 	st = status
 	co = checkout
 	ci = commit
+	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cred%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [core]
 	excludesfile = /home/shamer/.gitignore
 	# search for core.pager in
