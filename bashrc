@@ -57,7 +57,7 @@ if [ -f ~/.bash_completions/git-completion.bash ]; then
 fi
 
 if [ $(type -t __git_ps1) ]; then
-	export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] - \w$(__git_ps1)\033[0m\]\n\$\[\033[00m\] '
+	export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] - \w$(__git_ps1)\[\033[00m\]\n\$ '
 else
-	export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
+	export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
 fi
