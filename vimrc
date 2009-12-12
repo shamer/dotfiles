@@ -110,6 +110,7 @@ autocmd FileType make set noexpandtab shiftwidth=8
 " for C-like programming, have automatic indentation
 " use indentation of 4 spaces, expand tabs
 autocmd FileType c,cpp,slang set cindent shiftwidth=4 softtabstop=4 tabstop=8 expandtab
+autocmd FileType cs set cindent shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType java set cindent shiftwidth=4 softtabstop=4 tabstop=8 expandtab
 autocmd FileType php set cindent shiftwidth=2 softtabstop=2 tabstop=8 expandtab
 
