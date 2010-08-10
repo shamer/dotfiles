@@ -1,3 +1,4 @@
+" Vimball Archiver by Charles E. Campbell, Jr., Ph.D.
 " LargeFile: Sets up an autocmd to make editing large files work with celerity
 "   Author:		Charles E. Campbell, Jr.
 "   Date:		Sep 23, 2008
@@ -21,7 +22,7 @@ com! -bang Large		call s:LargeFile(<bang>0,expand("%"))
 " ---------------------------------------------------------------------
 "  Options: {{{1
 if !exists("g:LargeFile")
- let g:LargeFile= 20	" in megabytes
+ let g:LargeFile= 10	" in megabytes
 endif
 
 " ---------------------------------------------------------------------

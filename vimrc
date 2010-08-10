@@ -53,7 +53,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nobackup          " don't make backup file
+set nobackup             " don't make backup file
+set directory=~/tmp,/tmp " swap files get stored in tmp
 " remember all of these between sessions, but only 10 search terms; also
 " remember info for 10 files, but never any on removable disks, don't remember
 " marks in files, don't rehighlight old search patterns, and only save up to
@@ -88,6 +89,15 @@ set nolist          " Don't show end of line and tab characters
 "set showbreak=$     " Use '$' for long line wrapping character
 syntax on           " Turn syntax hilighting on
 set listchars=tab:>-,trail:.,eol:$ " Show trailing spaces when listing
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin autoload with pathogen 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use Pathogen to load bundles
+call pathogen#runtime_append_all_bundles()
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File specific options
@@ -129,8 +139,8 @@ autocmd FileType asm set syn="asm68k"
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
 autocmd FileType python set shiftwidth=4 softtabstop=4
 autocmd FileType python set smarttab expandtab autoindent smartindent
-au FileType python source ~/.vim/scripts/python.vim
-autocmd FileType python set complete+=k~/.vim/scripts/pydiction-0.5/pydiction
+"au FileType python source ~/.vim/scripts/python.vim
+"autocmd FileType python set complete+=k~/.vim/scripts/pydiction-0.5/pydiction
 
 " for VHDL use 2 spaces for tabs and auto indent
 autocmd FileType vhdl set shiftwidth=2 softtabstop=2
@@ -147,14 +157,22 @@ if &term == "xterm-color"
 	fixdel
 endif
 
-" Toggle taglist window
-map <F8> :Tlist<Return>
+
+" NERD Tree
+map <F2> :NERDTreeToggle<cr>
+let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+
+" Exuberant ctags
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
+
+" Display buffer list and switch to another buffer
+map <F6> :ls<Return>:b 
 
 " Display tab and end of line characters
 map <F7> :set list!<Return>
-
-" Display buffer list and switch to another buffer
-map <F5> :ls<Return>:b 
 
 " Turn spell checking on
 map <F9> :setlocal spell! spelllang=en_us<Return>
@@ -180,9 +198,3 @@ nnoremap <C-y> <C-y><C-y><C-y>
 "
 " pydiction:
 " http://www.vim.org/scripts/script.php?script_id=850
-
-" Smarter matching for %
-runtime plugins/matchit.vim
-
-" Easier comment handling (block commenting, toggling)
-runtime plugins/feraltogglecommentify.vim
