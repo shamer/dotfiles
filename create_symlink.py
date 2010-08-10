@@ -40,12 +40,12 @@ for f in files:
 
     elif f in deep_dir_bases:
         for dir in os.listdir(os.path.join(path, f)):
-            src = os.path.abspath(os.join(f, dir))
-            dst = os.join(home, '.' + f, dir)
+            src = os.path.abspath(os.path.join(f, dir))
+            dst = os.path.join(home, '.' + f, dir)
             symlink(src, dst)
 
     elif os.path.join(os.path.split(f)[:-1]) in deep_dir_bases:
         src = os.path.abspath(f)
-        dst = os.join(home, '.' + f)
+        dst = os.path.join(home, '.' + f)
         symlink(src, dst)
 
