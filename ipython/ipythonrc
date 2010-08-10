@@ -220,10 +220,10 @@ log 0
 logfile ''
 
 # banner 0 -> same as ipython -nobanner
-banner 1
+banner 0
 
 # messages 0 -> same as ipython -nomessages
-messages 1
+messages 0
 
 # Automatically call the pdb debugger after every uncaught exception. If you
 # are used to debugging using pdb, this puts you automatically inside of it
