@@ -1,0 +1,1 @@
+alias lightweb='lighttpd -f ~/.lighttpd/lighttpd.conf -D'

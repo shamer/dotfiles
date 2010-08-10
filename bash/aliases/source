@@ -1,0 +1,1 @@
+alias grepsrc='grep --exclude-dir=.svn --exclude-dir=.git'

@@ -1,0 +1,10 @@
+alias ls='ls --color=always'
+alias ll='ls -la'
+alias l='ls'
+alias u='cd ..'
+alias uu='cd ../..'
+alias uuu='cd ../../../'
+alias uuuu='cd ../../../..'
+
+# list only directories
+function lsd { ls -l --file-type $* | grep /; }

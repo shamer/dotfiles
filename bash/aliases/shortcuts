@@ -1,0 +1,7 @@
+alias h='history'
+alias gvi='gvim'
+alias tc='truecrypt'
+alias go='gnome-open'
+alias xv='xview'
+alias hgrep='history | grep'
+alias apt-search='apt-cache search'
