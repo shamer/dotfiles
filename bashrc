@@ -1,5 +1,7 @@
 # Source alises
-. ~/.bash/aliases/*
+for a in ~/.bash/aliases/* ; do
+    . $a
+done
 
 # Shell options
 shopt -s cmdhist
@@ -19,7 +21,9 @@ if [ -f /etc/profile.d/bash-completion ]; then
 fi
 
 # source custom completions
-. ~/.bash/completion_scripts/*
+for c in ~/.bash/completion_scripts/* ; do
+    . $c
+done
 
 # Set the window title
 case $TERM in
