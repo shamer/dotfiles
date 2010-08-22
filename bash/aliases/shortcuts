@@ -1,4 +1,5 @@
 alias h='history'
+alias vi='vim'
 alias gvi='gvim'
 alias tc='truecrypt'
 alias go='gnome-open'
