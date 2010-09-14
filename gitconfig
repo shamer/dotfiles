@@ -3,6 +3,7 @@
 	email = stephen.hamer@gmail.com
 [alias]
 	st = status
+	ss = status -s
 	co = checkout
 	ci = commit
 	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cred%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -13,6 +14,8 @@
 	# to see why we use this convoluted syntax
 	pager = less -$LESS -SFRX -SR 
 	#+'/^---'
+[push]
+	default = tracking
 [color]
 	branch = auto
 	diff = auto
