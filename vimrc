@@ -190,14 +190,3 @@ map <C-Left> :bpre<Return>
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin/script list 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" taglist:
-" http://www.vim.org/scripts/script.php?script_id=273
-" 
-" python:
-" http://vim.sourceforge.net/scripts/script.php?script_id=30
-"
-" pydiction:
-" http://www.vim.org/scripts/script.php?script_id=850
