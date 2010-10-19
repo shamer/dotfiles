@@ -136,10 +136,11 @@ autocmd FileType asm set syn="asm68k"
 
 " for python auto indent with 4 space tabs
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
-autocmd FileType python set shiftwidth=4 softtabstop=4
+autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=79
 autocmd FileType python set smarttab expandtab autoindent smartindent
 autocmd FileType python let ropevim_vim_completion=1
-"autocmd FileType python setlocal omnifunc=pysmell#Complete
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType python set omnifunc=pysmell#Complete
 
 "au FileType python source ~/.vim/scripts/python.vim
 "autocmd FileType python set complete+=k~/.vim/scripts/pydiction-0.5/pydiction
