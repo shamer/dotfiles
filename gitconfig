@@ -8,12 +8,14 @@
 	ci = commit
 	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cred%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [core]
+	whitespace = trailing-space,space-before-tab
 	excludesfile = /home/shamer/.gitignore
 	# search for core.pager in
 	# <http://www.kernel.org/pub/software/scm/git/docs/git-config.html>
 	# to see why we use this convoluted syntax
 	pager = less -$LESS -SFRX -SR 
 	#+'/^---'
+	editor = vim
 [push]
 	default = tracking
 [color]
