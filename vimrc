@@ -190,3 +190,5 @@ map <C-Left> :bpre<Return>
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
+" Fuzzy Finder shortcut
+nnoremap <C-t> :<C-u>FufFile **/<CR>
