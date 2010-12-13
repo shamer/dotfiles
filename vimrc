@@ -32,7 +32,7 @@ set incsearch       " Start searching when typing starts
 " Theme/Colors/Fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set background=dark " use a dark background
-"colorscheme evening
+colorscheme slate
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
 "set guifont=Lucida_Sans_Typewrite:h8:cANSI
 
@@ -134,6 +134,9 @@ au BufRead,BufNewFile *.asm   setfiletype asm
 autocmd FileType asm set noexpandtab softtabstop=8 shiftwidth=8 tabstop=8 
 autocmd FileType asm set syn="asm68k"
 
+" for javascript
+autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+
 " for python auto indent with 4 space tabs
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
 autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=79
@@ -145,9 +148,11 @@ autocmd FileType python let ropevim_vim_completion=1
 "au FileType python source ~/.vim/scripts/python.vim
 "autocmd FileType python set complete+=k~/.vim/scripts/pydiction-0.5/pydiction
 
+
 " for VHDL use 2 spaces for tabs and auto indent
 autocmd FileType vhdl set shiftwidth=2 softtabstop=2
 autocmd FileType vhdl set smarttab expandtab autoindent
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings
