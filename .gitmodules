@@ -13,6 +13,3 @@
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = http://github.com/kevinw/pyflakes-vim.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim.git
