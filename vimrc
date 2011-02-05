@@ -102,6 +102,9 @@ call pathogen#runtime_append_all_bundles()
 " File specific options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+au BufRead,BufNewFile *.proto		setfiletype proto
+autocmd FileType proto set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+
 " Git commit messages
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
