@@ -102,6 +102,10 @@ call pathogen#runtime_append_all_bundles()
 " File specific options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" puppet manifest files
+au BufRead,BufNewFile *.pp   setfiletype puppet
+autocmd FileType puppet set shiftwidth=4 softtabstop=4 tabstop=8 expandtab
+
 au BufRead,BufNewFile *.proto		setfiletype proto
 autocmd FileType proto set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
 
