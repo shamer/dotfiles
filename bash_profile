@@ -1,6 +1,6 @@
 [ -f ~/.bashrc ] && source ~/.bashrc
 
-export PATH=/sbin:/usr/sbin:$PATH
+export PATH=/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 [ -d ~/bin ] && export PATH=~/bin:$PATH
 
 # Source alises
