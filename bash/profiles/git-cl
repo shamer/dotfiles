@@ -1,1 +1,2 @@
+export EDITOR=vim
 [ -d ~/bin/git-cl ] && export PATH=~/bin/git-cl:$PATH
