@@ -44,6 +44,7 @@
 #
 #       git@vger.kernel.org
 #
+complete -o default -o nospace -F _git g
 
 case "$COMP_WORDBREAKS" in
 *:*) : great ;;
