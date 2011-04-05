@@ -13,9 +13,15 @@
 	# search for core.pager in
 	# <http://www.kernel.org/pub/software/scm/git/docs/git-config.html>
 	# to see why we use this convoluted syntax
-	pager = less -$LESS -SFRX -SR 
+	pager = less -$LESS -SFRX -SR
 	#+'/^---'
 	editor = vim
+[branch]
+	autosetupmerge = true
+[diff]
+	mnemonicprefix = true
+[merge]
+	stat = true
 [push]
 	default = tracking
 [color]
@@ -24,7 +30,7 @@
 	status = auto
 [color "branch"]
 	current = yellow reverse
-	local = yellow 
+	local = yellow
 	remote = green
 [color "diff"]
 	meta = yellow reverse
