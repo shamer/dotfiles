@@ -72,6 +72,8 @@ set nolist          " Don't show end of line and tab characters
 syntax on           " Turn syntax hilighting on
 set listchars=tab:>-,trail:.,eol:$ " Show trailing spaces when listing
 
+set foldmethod=marker " use {{{, }}} to denote folds in files
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin autoload with pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
