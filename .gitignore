@@ -1,8 +1,7 @@
 .DS_Store
 *.sw[opn]
 *.pyc
-ipython/history
-ipython/db
+ipython/profile_default/history.sqlite
 links2/links.his
 lighttpd/lighttpd.pid
 subversion/auth
