@@ -9,52 +9,52 @@
 	<entry name="AlternateEscapeKey" mtime="1247979326" type="string">
 		<stringvalue></stringvalue>
 	</entry>
-	<entry name="CommaKey" mtime="1250527009" type="string">
+	<entry name="CommaKey" mtime="1306613058" type="string">
 		<stringvalue>comma</stringvalue>
 	</entry>
-	<entry name="RightKey" mtime="1250527009" type="string">
+	<entry name="RightKey" mtime="1306613058" type="string">
 		<stringvalue>Right</stringvalue>
 	</entry>
-	<entry name="LeftKey" mtime="1250527009" type="string">
+	<entry name="LeftKey" mtime="1306613058" type="string">
 		<stringvalue>Left</stringvalue>
 	</entry>
-	<entry name="PageDownKey" mtime="1250527009" type="string">
+	<entry name="PageDownKey" mtime="1306613058" type="string">
 		<stringvalue>Page_Down</stringvalue>
 	</entry>
-	<entry name="PageUpKey" mtime="1250527009" type="string">
+	<entry name="PageUpKey" mtime="1306613058" type="string">
 		<stringvalue>Page_Up</stringvalue>
 	</entry>
-	<entry name="EndKey" mtime="1250527009" type="string">
+	<entry name="EndKey" mtime="1306613058" type="string">
 		<stringvalue>End</stringvalue>
 	</entry>
-	<entry name="HomeKey" mtime="1250527009" type="string">
+	<entry name="HomeKey" mtime="1306613058" type="string">
 		<stringvalue>Home</stringvalue>
 	</entry>
-	<entry name="DownKey" mtime="1250527009" type="string">
+	<entry name="DownKey" mtime="1306613058" type="string">
 		<stringvalue>Down</stringvalue>
 	</entry>
-	<entry name="UpKey" mtime="1250527009" type="string">
+	<entry name="UpKey" mtime="1306613058" type="string">
 		<stringvalue>Up</stringvalue>
 	</entry>
-	<entry name="TabKey" mtime="1250527009" type="string">
+	<entry name="TabKey" mtime="1306613058" type="string">
 		<stringvalue>Tab</stringvalue>
 	</entry>
-	<entry name="ShiftTabKey" mtime="1250527009" type="string">
+	<entry name="ShiftTabKey" mtime="1306613058" type="string">
 		<stringvalue>ISO_Left_Tab</stringvalue>
 	</entry>
-	<entry name="PasteKey" mtime="1250527009" type="string">
+	<entry name="PasteKey" mtime="1306613058" type="string">
 		<stringvalue>&lt;Control&gt;v</stringvalue>
 	</entry>
-	<entry name="CopyKey" mtime="1250527009" type="string">
+	<entry name="CopyKey" mtime="1306613058" type="string">
 		<stringvalue>&lt;Control&gt;c</stringvalue>
 	</entry>
-	<entry name="TextModeKey" mtime="1250527009" type="string">
+	<entry name="TextModeKey" mtime="1306613058" type="string">
 		<stringvalue>period</stringvalue>
 	</entry>
-	<entry name="SummonKey" mtime="1250527009" type="string">
+	<entry name="SummonKey" mtime="1306613058" type="string">
 		<stringvalue>&lt;Super&gt;space</stringvalue>
 	</entry>
-	<entry name="RegisteredShortcuts" mtime="1250527009" type="string">
+	<entry name="RegisteredShortcuts" mtime="1306613058" type="string">
 		<stringvalue>SummonKey,TextModeKey,CopyKey,PasteKey,AlternateEscapeKey,AlternateActivateKey,AlternateDeleteKey,ShiftTabKey,TabKey,UpKey,DownKey,HomeKey,EndKey,PageUpKey,PageDownKey,LeftKey,RightKey,CommaKey,</stringvalue>
 	</entry>
 </gconf>
