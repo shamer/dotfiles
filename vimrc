@@ -29,28 +29,6 @@ set smartcase       " Use case sensitive searching if there is mixed case
 set incsearch       " Start searching when typing starts
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Theme/Colors/Fonts
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set background=dark " use a dark background
-colorscheme slate
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
-"set guifont=Lucida_Sans_Typewrite:h8:cANSI
-
-"force color in terminals
-if &term =~ "xterm"
-	if has("terminfo")
-		set t_Co=8
-		set t_Sf=[3%p1%dm
-		set t_Sb=[4%p1%dm
-	else
-		set t_Co=8
-		set t_Sf=[3%dm
-		set t_Sb=[4%dm
-	endif
-endif
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nobackup             " don't make backup file
@@ -71,13 +49,17 @@ set viminfo=/10,'10,r.git/COMMIT_EDITMSG,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 "set nowrap          " Don't wrap long lines
 set sidescroll=10   " Scroll 10 characters over when move off the screen
 
+if has("gui_running")
+  set lines=30 columns=100  " Set size of GUI window
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Cues
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " display the current mode and partially-typed commands in the status line:
 set showmode
 set showcmd
-set ruler           " Show position 
+set ruler           " Show position
 set laststatus=2    " Display the status on the last two lines of the window
 set nohls           " Don't highlight searches
 set novisualbell    " Don't blink
@@ -91,7 +73,7 @@ syntax on           " Turn syntax hilighting on
 set listchars=tab:>-,trail:.,eol:$ " Show trailing spaces when listing
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin autoload with pathogen 
+" Plugin autoload with pathogen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use Pathogen to load bundles
@@ -103,11 +85,17 @@ call pathogen#runtime_append_all_bundles()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " puppet manifest files
-au BufRead,BufNewFile *.pp   setfiletype puppet
+au BufRead,BufNewFile *.pp set filetype=puppet
 autocmd FileType puppet set shiftwidth=4 softtabstop=4 tabstop=8 expandtab
 
-au BufRead,BufNewFile *.proto		setfiletype proto
+au BufRead,BufNewFile *.proto set filetype=proto
 autocmd FileType proto set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+
+au BufRead,BufNewFile *.soy set filetype=soy
+autocmd FileType soy set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+
+au BufRead,BufNewFile *.go set filetype=go
+autocmd FileType go set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
 
 " Git commit messages
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
@@ -138,17 +126,17 @@ autocmd FileType lex set noexpandtab shiftwidth=8 tabstop=8
 
 " for assembly use full tabs
 au BufRead,BufNewFile *.asm   setfiletype asm
-autocmd FileType asm set noexpandtab softtabstop=8 shiftwidth=8 tabstop=8 
+autocmd FileType asm set noexpandtab softtabstop=8 shiftwidth=8 tabstop=8
 autocmd FileType asm set syn="asm68k"
 
 " for javascript
-autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 textwidth=120 expandtab
 
 " for python auto indent with 4 space tabs
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class 
-autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=79 fo-=t
-autocmd FileType python set smarttab expandtab autoindent smartindent
+autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=120 fo-=t
+autocmd FileType python set nosmartindent expandtab autoindent cindent
 autocmd FileType python let ropevim_vim_completion=1
+autocmd FileType python source /usr/share/vim/vimfiles/after/ftplugin/python/pyflakes.vim
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType python set omnifunc=pysmell#Complete
 
@@ -160,6 +148,7 @@ autocmd FileType python let ropevim_vim_completion=1
 autocmd FileType vhdl set shiftwidth=2 softtabstop=2
 autocmd FileType vhdl set smarttab expandtab autoindent
 
+source ~/.vim/scripts/gnupg.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings
@@ -184,7 +173,7 @@ map <F4> :TlistToggle<cr>
 map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
 
 " Display buffer list and switch to another buffer
-map <F6> :ls<Return>:b 
+map <F6> :ls<Return>:b
 
 " Display tab and end of line characters
 map <F7> :set list!<Return>
@@ -198,9 +187,33 @@ map <C-Right> :bnext<Return>
 " Switch to previous buffer (ctrl + left arrow)
 map <C-Left> :bpre<Return>
 
-" Faster scrolling
+" Faster scrolling, 3 lines at a time
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
 " Fuzzy Finder shortcut
 nnoremap <C-t> :<C-u>FufFile **/<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme/Colors/Fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set background=dark " use a dark background
+colorscheme slate
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+"set guifont=Lucida_Sans_Typewrite:h8:cANSI
+
+"force color in terminals
+if &term =~ "xterm"
+	if has("terminfo")
+		set t_Co=8
+		set t_Sf=[3%p1%dm
+		set t_Sb=[4%p1%dm
+	else
+		set t_Co=8
+		set t_Sf=[3%dm
+		set t_Sb=[4%dm
+	endif
+endif
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
