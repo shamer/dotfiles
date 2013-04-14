@@ -19,6 +19,7 @@ set printoptions=left:8pc,right:3pc  " printing options (pc = percent of page)
 set tagrelative     " Make paths in tag files relative to location of the tag file
 set title           " Set term titles
 
+" Write a file as root using :W
 command W w !sudo tee % > /dev/null
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -27,6 +28,8 @@ command W w !sudo tee % > /dev/null
 set ignorecase      " Ignore case when searching
 set smartcase       " Use case sensitive searching if there is mixed case
 set incsearch       " Start searching when typing starts
+
+set completeopt+=longest
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups
@@ -50,7 +53,7 @@ set viminfo=/10,'10,r.git/COMMIT_EDITMSG,r/mnt/zip,r/mnt/floppy,f0,h,\"100
 set sidescroll=10   " Scroll 10 characters over when move off the screen
 
 if has("gui_running")
-  set lines=30 columns=100  " Set size of GUI window
+  set lines=30 columns=100  " Set default size of GUI window
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,7 +62,7 @@ endif
 " display the current mode and partially-typed commands in the status line:
 set showmode
 set showcmd
-set ruler           " Show position
+set ruler           " Show position of the cursor in the status line
 set laststatus=2    " Display the status on the last two lines of the window
 set nohls           " Don't highlight searches
 set novisualbell    " Don't blink
@@ -97,7 +100,9 @@ au BufRead,BufNewFile *.soy set filetype=soy
 autocmd FileType soy set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
 
 au BufRead,BufNewFile *.go set filetype=go
-autocmd FileType go set shiftwidth=2 softtabstop=2 tabstop=8 expandtab
+autocmd FileType go set shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType go set smartindent
+set rtp+=/usr/share/go/misc/vim
 
 " Git commit messages
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
@@ -134,15 +139,19 @@ autocmd FileType asm set syn="asm68k"
 " for javascript
 autocmd FileType javascript set cindent shiftwidth=2 softtabstop=2 tabstop=8 textwidth=120 expandtab
 
+" Highlight the word ALPHA
+syn match alphaFlag "\<ALPHA\>"
+autocmd BufWinEnter * syn match alphaFlag "\<ALPHA\>"
+hi def link alphaFlag Todo
+
 " for python auto indent with 4 space tabs
-autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=120 fo-=t
-autocmd FileType python set nosmartindent expandtab autoindent cindent
-autocmd FileType python let ropevim_vim_completion=1
-autocmd FileType python source /usr/share/vim/vimfiles/after/ftplugin/python/pyflakes.vim
+autocmd FileType python set shiftwidth=4 softtabstop=4 textwidth=120 fo-=t expandtab
+autocmd FileType python set smartindent nocindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+"autocmd FileType python let ropevim_vim_completion=1
+"autocmd FileType python source /usr/share/vim/vimfiles/after/ftplugin/python/pyflakes.vim
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 "autocmd FileType python set omnifunc=pysmell#Complete
 
-"au FileType python source ~/.vim/scripts/python.vim
 "autocmd FileType python set complete+=k~/.vim/scripts/pydiction-0.5/pydiction
 
 
@@ -157,6 +166,13 @@ source ~/.vim/scripts/gnupg.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map! <S-Enter> <Esc>
 
+" Use ctrl+c for copy and ctrl+v for paste
+" vmap <C-c> "+y
+" vmap <C-x> "+c
+" vmap <C-v> c<ESC>"+p
+" imap <C-v> <ESC>"+pa
+" map <C-v> "+p
+
 " Fixes backspace problem
 if &term == "xterm-color"
 	set t_kb=
@@ -168,11 +184,8 @@ endif
 map <F2> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 
-" Exuberant ctags
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <F4> :TlistToggle<cr>
-map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
+" toggle line number, relative line numbering, off
+map <F3> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " Display buffer list and switch to another buffer
 map <F6> :ls<Return>:b
@@ -189,13 +202,12 @@ map <C-Right> :bnext<Return>
 " Switch to previous buffer (ctrl + left arrow)
 map <C-Left> :bpre<Return>
 
-" Faster scrolling, 3 lines at a time
+" Faster scrolling with ctrl+e, ctrl+y, 3 lines at a time
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
 
 " Fuzzy Finder shortcut
 nnoremap <C-t> :<C-u>FufFile **/<CR>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors/Fonts
@@ -217,5 +229,7 @@ if &term =~ "xterm"
 		set t_Sb=[4%dm
 	endif
 endif
+
+" Highlight trailing whitespace
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 highlight ExtraWhitespace ctermbg=red guibg=red
