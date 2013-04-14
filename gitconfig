@@ -7,6 +7,9 @@
 	co = checkout
 	ci = commit
 	lg = log --graph --pretty=format:'%Cred%h%Creset - %Cred%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	mask   = update-index --assume-unchanged
+	unmask = update-index --no-assume-unchanged
+	masked  = "!git ls-files -v | grep ^h | cut -c 3-"
 [core]
 	whitespace = trailing-space,space-before-tab
 	excludesfile = /home/shamer/.gitignore
