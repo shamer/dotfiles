@@ -22,6 +22,8 @@ c.PromptManager.in2_template = '   .\D.: '
 c.PromptManager.out_template = 'Out[\#]: '
 c.PromptManager.justify = True
 
+c.PlainTextFormatter.max_width = 120
+
 c.StoreMagic.autorestore = False
 
 c.PrefilterManager.multi_line_specials = False
